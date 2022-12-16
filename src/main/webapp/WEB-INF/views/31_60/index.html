@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>YjsTube31_60</title>
+	<link rel="shortcut icon" href="image/img1.png">
+	
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<!-- <script src="../31_60/main1.js" defer></script> -->
+	<script src="../31_60/main2.js" defer></script>
+</head>
+<body>
+	<h1>YjsTube</h1>
+	<header>
+		<label>지역명의 첫번째 글자를 입력하세요 
+			<input id="search-word-input" maxlength="1" type="text">
+		</label>
+	</header>
+	<!-- 1-031. 문자 추출 -->
+	<div id="prefecture-list">
+	  <button data-name="속초" data-phonetic="sokcho">속초</button>
+	  <button data-name="부산" data-phonetic="busan">부산</button>
+	  <button data-name="포항" data-phonetic="pohang">포항</button>
+	  <button data-name="상주" data-phonetic="sangju">상주</button>
+	  <button data-name="서울" data-phonetic="seoul">서울</button>
+	  <button data-name="제주" data-phonetic="jeju">제주</button>
+	  <button data-name="김해" data-phonetic="kimhae">김해</button>
+	  <button data-name="대구" data-phonetic="daegu">대구</button>
+	  <button data-name="울산" data-phonetic="ulsan">울산</button>
+	</div>
+	
+	<!-- 1-034.문자열 변환 -->
+	<input id="phoneText" placeholder="전화번호 입력" type="tel">
+	<p class="caption">
+		<small> * 실제 데이터는 전송되지 않습니다 </small>
+	</p>
+	<button id="submitButton" type="submit">submit</button>
+	
+	<!-- 1-035. 문자열 나누기 -->
+	<main class="large">
+		<h2>url에?id=(ID)&amp;name=(이름)&amp;age=(나이)를<br>추가해서 실행해주세요.</h2>
+	</main>
+	<table>
+		<tr><th>ID</th><td class="id"></td></tr>
+		<tr><th>name</th><td class="name"></td></tr>
+		<tr><th>age</th><td class="age"></td></tr>
+	</table>
+</body>
+</html>

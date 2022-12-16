@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 .button {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top:30px;
   background-color: rgba(0, 0, 0, 0.1);
   padding: 10px;
   color: #fff;
@@ -21,7 +22,7 @@
 
 
 .character {
-  background-image: url(../image/rotation.jpg);
+  background-image: url(../image/you.png);
   background-size: 100px 100px;
   width: 100px;
   height: 100px;
