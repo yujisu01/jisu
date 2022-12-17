@@ -83,3 +83,5 @@ if(hashes['age']!=null){
 	document.querySelector('.age').innerHTML=hashes['age'];
 }
 
+
+// file:///C:/Users/user/eclipse-workspace/jisu/src/main/webapp/WEB-INF/views/31_60/index.html?id=zoo&name=lion&age=13
