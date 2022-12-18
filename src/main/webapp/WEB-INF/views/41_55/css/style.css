@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 150px;
+  font-size: 100px;
+  font-weight: bold;
+  color: #222222;
+  -webkit-text-stroke: 2px white;
+  text-stroke: 2px white;
+}
+
+.current-time {
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  color: #222222;
+  -webkit-text-stroke: 2px white;
+  text-stroke: 2px white;
+}
+
+#tweetTextArea {
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  font-size: 22px;
+}
+
+#tweetButton {
+  max-width: 300px;
+  font-size: 30px;
+  justify-self: center;
+  background-color: #2673a6;
+}
+
+#tweetButton:hover {
+  background-color: #2688bc;
+}
+
+#tweetButton:active {
+  background-color: #265c8f;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 140px;
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  color: #fff;
+  border: 1px solid #fff;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.card h2 {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.card p {
+  font-size: 22px;
+  margin-bottom: 0;
+}
