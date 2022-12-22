@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+body {
+  background: url("../image/bg.jpg") center;
+}
+
+#myCanvas {
+  background: rgba(0, 0, 255, 0.2);
+}

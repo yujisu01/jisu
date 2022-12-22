@@ -1,0 +1,67 @@
+@charset "UTF-8";
+.clock{
+	border-radius:50%;
+	border:3px solid white;
+	width: 400px;
+	height: 400px;
+	background: rgb(128, 128, 255);
+	position: relative;
+}
+.lineHour{
+	width:10px;
+	height: 150px;
+	background: white;
+	position: absolute;
+	top: calc(50% - 150px);
+	left: calc(50% - 5px);
+	transform-origin: bottom;
+}
+.lineMin {
+  width: 4px;
+  height: 200px;
+  background: white;
+  position: absolute;
+  top: calc(50% - 200px);
+  left: calc(50% - 2px);
+  transform-origin: bottom;
+}
+
+.lineSec {
+  width: 2px;
+  height: 200px;
+  background: #cccccc;
+  position: absolute;
+  top: calc(50% - 200px);
+  left: calc(50% - 1px);
+  transform-origin: bottom;
+}
+
+
+
+
+
+.line-horizontal {
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+  background: #C5E1A5;
+}
+
+.line-vertical {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 100%;
+  background: #F48FB1;
+}
+body {
+  background: url("../image/bg.jpg") center;
+}
+
+#myCanvas {
+  background: rgba(0, 255, 255, 0.2);
+}
