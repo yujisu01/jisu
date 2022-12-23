@@ -78,3 +78,16 @@ setInterval(() => {
 	eM.style.transform = `rotate(${degM}deg)`;
 	eS.style.transform = `rotate(${degS}deg)`;
 },50);
+
+
+
+const x=window.scrollX;
+const y=window.scrolly;
+console.log(x,y);
+
+
+const scrBtn=document.querySelector('#scrollBtn');
+scrBtn.addEventListener('click', (event) =>{
+	window.scrollTo(100,0);
+	console.log(window.scrollTo(100,0));
+});
