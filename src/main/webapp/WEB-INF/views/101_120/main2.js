@@ -132,3 +132,8 @@ document.querySelector('#mouseBox').addEventListener('mouseleave', () => {
 function mouseLog(message){
 	console.log(message);
 }
+
+
+window.addEventListener('scroll', () =>{
+	console.log('스크롤작업', window.scrollX, window.scrollY);
+});
