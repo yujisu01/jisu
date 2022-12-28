@@ -247,3 +247,27 @@ function stopsound(){
 	myAudio.pause();
 }
 
+
+
+
+
+/** 
+	1-130. 화면사이즈 이벤트 처리
+	- 윈도창 크기에 따라 처리분류할때
+	- 레이아웃 크기조정
+	- resize(): 브라우저 윈도창의 사이즈변환시점
+*/
+
+/* 가로길이 표시 */
+const widthLog= document.querySelector('#widthLog');
+/* 세로길이 표시 */ 
+const heightLog= document.querySelector('#heightLog');
+
+// 윈도사이즈 변경시마다 처리실행
+window.addEventListener('resize', () =>{
+	widthLog.innerText= `${window.innerWidth}px`;
+	heightLog.innerText= `${window.innerHeight}px`;
+});
+
+
+

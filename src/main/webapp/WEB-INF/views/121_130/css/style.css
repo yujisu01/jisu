@@ -165,3 +165,9 @@ main.centering {
   overflow-y: scroll;
   text-align: center;
 }
+
+
+#pLog {
+  font-size: 22px;
+  font-weight: bold;
+}
