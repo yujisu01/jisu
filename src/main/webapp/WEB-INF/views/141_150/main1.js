@@ -124,3 +124,11 @@ removeBtn.addEventListener('click', (event) => {
 /**
 	1-147. 요소 자신 삭제하기
  */
+setTimeout(() => {
+const selfRmChild= document.querySelector('#selfRmChild');
+selfRmChild.remove();
+	
+},3000);
+
+
+
