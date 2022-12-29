@@ -61,3 +61,28 @@ setTimeout(() => {
  */
 // replaceChild()는 부모노드내 자식노드를 새로운 노드로 교체함. 두번째 인수를 첫번째인수로 변경.
 // 변경된 노드는 DOM트리에서 제거되고 replaceChild()의 반환값이 됨.....
+
+const reBtn= document.querySelector('#replaceBtn');
+
+reBtn.addEventListener('click', () => {
+	const container5= document.querySelector('.container5');	// 컨테이너
+	const oldBox= document.querySelector('.old-box');		// 교체될박스
+	const newBox= document.createElement('div');		// 교체후박스
+	
+	newBox.textContent='새로운 박스입니다..';
+	newBox.classList.add('new-box','box');	// new-box, box CSS클래스추가
+	
+	container5.replaceChild(newBox,oldBox);
+});
+
+
+
+
+/**
+	1-151. 노드 교체하기
+	- 변경대상노드.replaceWith(새노드)
+ */
+
+// 변경대상노드를 새로운 노드로 교체함. 노드가 DOM트리에서 제거되는 점은 replaceChild()와 같다. 
+// 하지만 반환값이 없음.
+

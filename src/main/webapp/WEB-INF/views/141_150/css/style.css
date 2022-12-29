@@ -196,4 +196,18 @@
   padding: 10px;
 }
 
+						/* 1-150 */
+						
+.container5 {
+  display: flex;
+  border: 2px dotted #fff;
+  padding: 10px;
+}
 
+.container5 .new-box {
+  border: 4px solid #d03939;
+    background-image: url(../../image/cookie.jpg);
+  background-size: 200px 200px;
+  width: 200px;
+  height: 200px;
+}
