@@ -85,4 +85,30 @@ reBtn.addEventListener('click', () => {
 
 // 변경대상노드를 새로운 노드로 교체함. 노드가 DOM트리에서 제거되는 점은 replaceChild()와 같다. 
 // 하지만 반환값이 없음.
+setTimeout(() => {
+	const oldReBox = document.querySelector('.old-replace-box');	// 교체전 박스
+	const newReBox= document.createElement('div');		// 교체후 박스
+	
+	newReBox.textContent='교체 됐어요 짜잔';
+	newReBox.classList.add('new-replace-box', 'box');
+	oldReBox.replaceWith(newReBox);
+},3000);
 
+
+
+
+/**
+	1-152. 텍스트요소 다루기
+	-html 텍스트 변경하고 싶을때
+ */
+// textContent는 요소내 택스트 가져옴
+const weatherElement= document.querySelector('#weather');
+setTimeout(() => {
+	weatherElement.textContent='기온은 영하46도가 예상됩니다';
+},3000);
+
+
+
+/**
+	1-153. 
+ */
