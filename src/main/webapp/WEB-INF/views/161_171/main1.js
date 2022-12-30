@@ -112,3 +112,68 @@ fEle.addEventListener('change', (event) => {
 // FileReader 객체의 readAsText()를 사용해 텍스트형식으로 읽기 가능.
 // 비동기므로 addEventListener()를 사용해 읽기작업완료 이벤트인 load를 감시함. 
 
+const readElement = document.querySelector('#readFile');
+const pEl = document.querySelector('.fileLog');
+
+// 파일선택기능
+readElement.addEventListener('input', (event) => {
+	const readTarget= event.target;
+	const readFiles= readTarget.files;
+	const readFile = readFiles[0];
+	// 읽기 작업완료
+	const reader= new FileReader();
+	reader.addEventListener('load', () => {
+		pEl.textContent = reader.result;	// p 요소에 결과출력
+		console.log(reader);
+	});
+	reader.readAsText(readFile); 		// 텍스트파일형식으로 읽어오기
+});
+
+
+
+/**
+	1-169. 데이터 형식으로 파일 읽어오기
+	- DataURL 가져올때
+	- readAsDataURL(파일) 
+ */
+const dataElement= document.querySelector('#dataFile');
+const imgEl = document.querySelector('.dataLog img');
+
+// 파일선택기능
+dataElement.addEventListener('input', (event) => {
+	const dataTarget= event.target;
+	const dataFiles= dataTarget.files;
+	const dataFile = dataFiles[0];
+	
+	// FileReader 생성
+	const dataReader= new FileReader();
+	dataReader.addEventListener('load', () => {
+		imgEl.src=dataReader.result;
+	});
+	dataReader.readAsDataURL(dataFile);
+});
+
+
+
+
+/**
+	1-170. 라디오 버튼 상태 읽어오기~ 1-171.라디오 버튼상태 변경 확인하기
+	- 폼요소[키]
+ */
+const radioElement= document.querySelector('form#radioGroup');
+
+//const fruitVal= radioElement.fruit.value;
+//const dessertVal= radioElement.dessert.value;
+
+//console.log(`오늘의 과일은 ${fruitVal} 이거다!`);
+//console.log(`밥먹고 ${dessertVal} 먹자!`);
+
+radioElement.addEventListener('change', radioChange);
+
+function radioChange(event) {
+	const fVal = radioElement.fruit.value;
+	const dVal = radioElement.dessert.value;
+	
+	console.log(`오늘의 과일은 ${fVal} 이거다!`);
+	console.log(`밥먹고 ${dVal} 먹자!`);
+}

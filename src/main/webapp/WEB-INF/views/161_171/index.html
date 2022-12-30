@@ -5,8 +5,8 @@
 <title>161_170</title>
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <link rel="stylesheet" href="../common/base_style.css" type="text/css">
-	<!-- <script src="../161_170/main1.js" defer></script> -->
-		<script src="../161_170/main1.js" defer></script>
+	<!-- <script src="../161_171/main1.js" defer></script> -->
+		<script src="../161_171/main1.js" defer></script>
 </head>
 <body class="chapter-9">
 	<!-- 1-161.텍스트박스값 읽어오기 -->
@@ -63,6 +63,40 @@
 	<main class="centering">
 		<input type="file" id="myFile" accept=".jpg" />
 	</main>
+	
+	<!-- 1-168. 텍스트형식으로 파일읽어오기 -->
+	<main class="centering">
+	<h1>🔥 .txt 파일형식만 지원합니다. 🔥</h1>
+		<input type="file" id="readFile" accept=".txt" />
+		<p class="fileLog"></p>
+	</main>
+	
+	<!-- 1-169. 데이터 형식으로 파일읽기 -->
+	<main class="centering">
+	<h1>💐 이미지 파일만 지원합니다. 💐</h1>
+		<input type="file" id="dataFile" accept=".png, .jpg, .gif" />
+		<p class="dataLog"><img /></p>
+	</main>
 
+	<!-- 1-170. 라디오 버튼상태읽기 -->
+	<main class="centering">
+		<form id="radioGroup">
+			<!-- 첫번째 라디오번튼 그룹 -->
+			<p>- 1 - </p>
+			<label><input type="radio" name="fruit" value="apple" checked/>a p p l e 🍎</label>
+			<label><input type="radio" name="fruit" value="banana" />b a n a n a 🍌</label>
+			<label><input type="radio" name="fruit" vaue="kiwi" /> k i w i 🥝</label>
+			<p>- 2 - </p>
+			
+			<!-- 두번째 라디오버튼 그룹 -->
+			<label><input type="radio" name="dessert" value="donut" checked />d o n u t 🍩</label>
+			<label><input type="radio" name="dessert" value="cookie" />c o o k i e 🍪</label>
+			<label><input type="radio" name="dessert" value="cake" />c a k e 🍰</label>
+			
+		</form>
+	</main>
+	
+	<!-- 1-171. 라디오 버튼 상태변경 확인하기 -->
+	
 </body>
 </html>
