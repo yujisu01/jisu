@@ -1,1 +1,27 @@
 @charset "UTF-8";
+
+			/* 1-153 */
+			
+body{
+	align-items:flex-end;
+}
+main{
+	display: flex;
+	width:100%;
+	height:auto;
+	border-radius:5px;
+	background:rbga(255,255,255,0.6);
+	-webkit-backdrop-filter:blur(16px);
+	box-shadow:5px 5px 5px rgba(0,0,0,0.3);
+	color: white;
+	box-sizing:border-box;
+	padding:0px;
+	text-align:center;
+	 flex-direction: column;
+}
+#weather{
+	font-size:2rem;
+}
+#weather strong{
+	color: #d03939;
+}
