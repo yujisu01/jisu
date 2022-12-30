@@ -75,3 +75,40 @@ console.log('checkedA값:', checkedA, ' checkedB값:', checkedB, ' checkedC값:'
 	1-166. 체크박스 상태변경 확인하기
 	- 체크박스 변경시 작업처리
  */
+
+const check= document.querySelector('#checkA');
+check.addEventListener('change', (event) => {
+	const cbValue= event.target.checked;	// 체크박스상태 확인
+	const checkLog= `오늘저녁은 대패삼겹살입니다.. ${cbValue}`;		// 화면에 표시
+	document.querySelector('.checkLog').innerHTML= checkLog;
+});
+
+
+
+/**
+	1-167. 파일정보 읽어오기
+	- 파일선택 기능 표시
+	- input요소.files
+ */
+// input요소의 type속성은 file로 설정하면 파일선택폼이표시됨., 
+// multiple속성 지정시 여러파일 작업 가능.. 그리고 files 속성의 배열도 여러개 요소가짐
+
+const fEle= document.querySelector('#myFile');
+fEle.addEventListener('change', (event) => {
+	const fileTarget= event.target;
+	const files = fileTarget.files;		// 선택된 파일참조
+	const file = files[0];	// 배열타입이므로 0번쨰 파일참조
+	
+	alert(`${file.name} 파일이 선택되었습니다.`);
+});
+
+
+
+/**
+	1-168. 텍스트 형식으로 파일 읽어오기
+	- readAsText(파일)
+ */
+// FileReader 객체를 사용해 input요소로 선택한 파일데이터에 접근가능하다.
+// FileReader 객체의 readAsText()를 사용해 텍스트형식으로 읽기 가능.
+// 비동기므로 addEventListener()를 사용해 읽기작업완료 이벤트인 load를 감시함. 
+
