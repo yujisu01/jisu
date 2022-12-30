@@ -87,3 +87,52 @@ const box2= document.querySelector('#box2');
 
 console.log(box1.classList.contains('red'));
 console.log(box2.classList.contains('red'));
+
+
+
+/**
+	1-158. 요소 클래스 유/무효화 하기
+	- 요소 클래스 동적으로 다룰때
+	- 요소.classList.toggle(클래스):클래스전환
+ */
+
+// 모든 버튼 요소처리
+document.querySelectorAll('.button').forEach((button) => {
+	// .button 클릭시 처리설정
+	button.addEventListener('click', () => {
+		// .button 다음요소의 클래스전환
+		button.nextElementSibling.classList.toggle('show');
+	});
+});
+
+
+/**
+	1-159. 스타일 변경하기
+	- 자바스크립트 처리결과에 따라 스타일 변경하고싶을때
+	- 요소.style.속성
+ */
+
+const infor= document.querySelector('#information');
+
+infor.style.color='white';	//color변경
+infor.style.fontSize= '70px';	// 폰트크기
+infor.style.fontWeight= '600';
+
+const strokeColor= '#c52b84';
+
+infor.style.webkitTextStroke= `2px ${strokeColor}`;	// webkit-text-stroke변경
+infor.style.textStroke= `2px ${strokeColor}`;
+infor.style.textShadow= `7px 7px 0 #bf3384`;
+
+
+
+/**
+	1-160. 스타일 확인하기
+	- 각 요소에 적용한 스타일 확인하고 싶을때
+ */
+// getComputedStyle(요소).속성
+
+const styleBox= document.querySelector('#styleBox');
+console.log(getComputedStyle(styleBox).width);		// width값 확인
+console.log(getComputedStyle(styleBox).backgroundColor);	// background-color확인
+
