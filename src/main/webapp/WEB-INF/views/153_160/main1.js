@@ -37,6 +37,53 @@ imageElement.setAttribute('src', '../image/가시.jpg');	// 사진 두산이.jpg
 
 
 /**
-	
+	1-156. <a>태그_blank의 부모창 조작 제한하기
+	-안전하게 _blank속성을 사용
  */
 
+/* target="_blank" 속성을 가진 a태그로 윈도창 열었을때, 해당창에서 window.opender를 사용해서
+ 	부모창 제어가 가능하다. 하지만 어느정도 위험성이 있으므로 rel="noopener"를 사용해
+	부모창 제어를 제한할수 있다
+	
+	noopener 속성? 요즘은 보안상취약점 때문에 필수적으로 사용함. 
+*/
+
+const aElementList= document.querySelectorAll('a'); 	// a 요소 모두 가져오기
+
+aElementList.forEach((element) => {
+	// a태그에 target속성이 없음 return
+	if(element.hasAttribute('target') === false){
+		return;
+	}
+	// target이 _blank 속성이 아니면 return
+	if(element.getAttribute('target') !== '_blank'){
+		return;
+	}
+	// rel속성에 noopener 설정
+	element.setAttribute('rel', 'noopener');
+});
+
+
+
+
+/**
+	1-157. 요소 클래스 속성 다루기
+	- 클래스 추가/제거/존재여부 확인시
+ */
+
+// 이 메소드를 사용해 요소의 클래스 조작 가능. 
+// classList.add / classList.remove / classList.contains 
+
+const box = document.querySelector('#classBox');
+
+//box.classList.add('blue');
+box.classList.add('red');
+box.classList.add('blue', 'yellow', 'pink');
+
+box.classList.remove('blue','pink');
+
+const box1= document.querySelector('#box1');
+const box2= document.querySelector('#box2');
+
+console.log(box1.classList.contains('red'));
+console.log(box2.classList.contains('red'));

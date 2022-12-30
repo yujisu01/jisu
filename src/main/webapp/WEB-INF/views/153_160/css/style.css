@@ -25,3 +25,27 @@ main{
 #weather strong{
 	color: #d03939;
 }
+
+
+
+			/* 1-156 */
+			
+#classBox {
+  width: 100px;
+  height: 100px;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: #0000ff;
+}
+
+.yellow{
+	background-color: yellow;
+}
+.pink{
+	background-color: pink;
+}
