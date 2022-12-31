@@ -120,4 +120,20 @@ document.querySelector('#cssTranCheckbox').addEventListener('change', (event) =>
 });
 
 /* (2) Web Animations API를 사용한 샘플 */
-
+document.querySelector('#webAniCheckbox').addEventListener('change', (event) => {
+	const webAniElement= document.querySelector('.webAniRect');
+	
+	if(event.target.checked === true) {
+		webAniElement.animate(
+			{
+				transform: ['scale(1)', 'scale(5)']
+			},{
+				duration:500, fill:'forwards', easing:'ease'
+			}
+		);
+	}else{
+		webAniElement.animate(
+			{transform: ['scale(5), scale(1)']},{duration:500, fill:'forwards', easing: 'ease'}
+		);
+	}
+});
