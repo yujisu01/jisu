@@ -102,3 +102,49 @@ button {
   position: absolute;
   bottom: 100px;
 }
+
+
+			/* 1-183 */
+			
+.container {
+  position: relative;
+  width: 940px;
+  height: 520px;
+
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.apiRect {
+  width: 100px;
+  height: 100px;
+  display: block;
+  position: absolute;
+  background: white;
+  top: 200px;
+}					
+
+			/* 1-183(1) */
+			
+.cssTranRect {
+  width: 50px;
+  height: 50px;
+  display: block;
+  position: absolute;
+  background: white;
+  top: 150px;
+
+  transition: all 0.5s;
+}
+
+.cssTranRect.state-show {
+  transform: scale(6);
+}
+
+.centering {
+  position: relative;
+}
+
+.cssTranUi {
+  position: absolute;
+  bottom: 100px;
+}								

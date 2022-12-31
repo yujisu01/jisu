@@ -76,3 +76,48 @@ loadTargetEl.addEventListener('animationend', (event) => {
 	document.querySelector('.loadLog').innerHTML = 'animation 발생(end) : '
 	+ new Date().toLocaleTimeString();
 });
+
+
+
+/**
+	1-183. Web Animations API 사용하기
+	- 자유도가 높은모션 사용
+	- 자바스크립트가 메인으로 모션생성
+	- 요소.animate(객체,객체)
+ */
+// Web 애니메이션 api는 자바스크립트에서 애니메이션 사용하기 위한 수단임. 
+// CSS Transition과 CSS animations은 css에 미리 모션 등록을 해놔야한다. 근데 이건 아님
+// 종료시점 판단이 쉬움.
+const apiElement= document.querySelector('.apiRect');
+
+// 애니메이션 설정 개신기해.
+apiElement.animate(
+	{	// 시작값과 종료값 설정
+		transform:['translateX(0px) rotate(0deg)', 'translateX(800px) rotate(360deg)']
+	},
+	{	// 밀리초지정,			반복횟수				반복작업 방식			가속도 종류
+		duration: 3000, iterations: Infinity, direction:'normal', easing: 'ease'
+	
+	}
+);
+
+
+/**
+	1-184. 요소 크기 변경하기
+	- 버튼에 마우스 반응설정
+ */
+// 요소 크기변경은 css의 transform()설정과 scale() 메소드 사용함. 
+
+/* (1) CSS Transitions 사용한 샘플 */
+document.querySelector('#cssTranCheckbox').addEventListener('change', (event) => {
+	const cssTranElement= document.querySelector('.cssTranRect');
+	
+	if(cssTranElement.classList.contains('state-show') === true){
+		cssTranElement.classList.remove('state-show');
+	}else{
+		cssTranElement.classList.add('state-show');
+	}
+});
+
+/* (2) Web Animations API를 사용한 샘플 */
+

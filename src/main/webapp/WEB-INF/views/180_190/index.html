@@ -5,8 +5,9 @@
 <title>180_190</title>
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <link rel="stylesheet" href="../common/base_style.css" type="text/css">
-	<!-- <script src="../180_190/main1.js" defer></script> -->
-		<script src="../180_190/main1.js" defer></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js" defer></script>
+<!-- <script src="../180_190/main1.js" defer></script> -->
+	 <script src="../180_190/main1.js" defer></script>
 </head>
 <body class="chapter-10">
 	<!-- 1-180.css transitions, css animation -->
@@ -38,6 +39,20 @@
 			</label>
 			<div class="loadLog">~ 로그 표시 영역 ~</div>
 		</div>
+	</main>
+	
+	<!-- 1-183. Web Animations API 사용 (상단에 script삽입) -->
+	<div class="container">
+		<div class="apiRect"></div>
+	</div>
+	
+	<!-- 1-184. 요소 크기변경 -->
+	<!-- (1) CSS Transitions 사용 샘플 -->
+	<main class="centering">
+		<div class="cssTranRect"></div>
+		<label class="cssTranUi">
+			<input type="checkbox" id="cssTranCheckbox" /> CSS Transition 애니메이션 확인
+		</label>
 	</main>
 
 </body>
