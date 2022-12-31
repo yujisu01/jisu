@@ -55,5 +55,47 @@ colorElement.addEventListener('change', (event) => {
 /**
 	1-178. 풀다운 메뉴 사용하기
 	- 시도별 행정구역 입력폼을 만들때
-
  */
+	const pref_list = [
+		 { value: '02', name: '서울' },
+		 { value: '062', name: '광주' },
+		 { value: '031', name: '경기' },
+	];
+	
+	const pulldownElement = document.querySelector('#pref');
+	
+	// option 요소 초기 표시작성
+	let optionString = '<option value= "">선택하세요</option>';
+	// 옵션 요소 배열에서 가져오기
+	pref_list.forEach((item) => {
+		optionString += `<option value="${item.value}">${item.name}</option>`;
+	});
+	// option 요소를 select요소에 추가
+	pulldownElement.innerHTML= optionString;
+	
+	// 변경시 이벤트
+	pulldownElement.addEventListener('change', (event) => {
+		const pulldownValue= event.target.value;
+		const selectMessage= pulldownValue === ''? `지역이 선택되지 않았습니다` : `선택된 지역은 ${pulldownValue}입니다.`;
+		
+		console.log(selectMessage);
+		document.querySelector('.pulldownLog').innerHTML=selectMessage;
+	});
+	
+	
+	
+/**
+	1-179. 폼 전송하기
+	- submit 
+ */
+
+const formElement= document.querySelector('form');
+formElement.addEventListener('submit', handleSubmit);
+
+function handleSubmit(event) {
+	const isYes= confirm('이 내용으로 전송하시겠습니까?');
+	if(isYes === false){
+		event.preventDefault();
+	}
+}
+
