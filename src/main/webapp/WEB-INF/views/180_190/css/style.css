@@ -306,4 +306,43 @@ button {
 
 
 			/* 1-188 (1) */
+			
+.cssGrayRect {
+  display: block;
+  position: absolute;
+  top: 50px;
+
+  filter: grayscale(100%);
+  transition: all 0.5s;
+}
+
+.cssGrayRect.state-show {
+  filter: grayscale(0%);
+}
+
+.centering {
+  position: relative;
+}
+
+.cssGrayUi {
+  position: absolute;
+  bottom: 50px;
+}
 			/* 1-188 (2) */
+			
+.webGrayRect {
+  display: block;
+  position: absolute;
+  top: 50px;
+  filter: grayscale(100%);
+}
+.centering {
+  position: relative;
+}
+
+.webGrayUi {
+  position: absolute;
+  bottom: 50px;
+}
+
+

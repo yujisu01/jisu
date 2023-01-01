@@ -261,3 +261,44 @@ document.querySelector('#webBrightCheckbox').addEventListener('change', (event) 
 		});
 	}
 });
+
+
+
+/**
+	1-188. 요소 채도 조절하기
+	- 요소에 모노크롬 효과 주기
+	- grayscale() 메소드 사용. 
+ */
+/* (1) CSS Transition */
+document.querySelector('#cssGrayCheckbox').addEventListener('change', (event) => {
+	const cssGrayE=document.querySelector('.cssGrayRect');
+	
+	if(cssGrayE.classList.contains('state-show') ===true){
+		cssGrayE.classList.remove('state-show');
+	}else{
+		cssGrayE.classList.add('state-show');
+	} 
+});
+
+/* (2) Web Animation API */ 
+document.querySelector('#webGrayCheckbox').addEventListener('change', (event) => {
+	const webGrayE= document.querySelector('.webGrayRect');
+	
+	if(event.target.checked===true){
+		webGrayE.animate({
+			filter: ['grayscale(100%)', 'grayscale(0%)']
+		},
+		{
+			duration:500, fill:'forwards', easing:'ease'
+		});
+	}else{
+		webGrayE.animate({
+			filter: ['grayscale(0%)', 'grayscale(100%)']
+		},
+		{
+			duration: 500, fill:'forwards', easing:'ease'
+		});
+	}
+});
+
+
