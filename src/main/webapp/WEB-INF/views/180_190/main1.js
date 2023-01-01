@@ -302,3 +302,44 @@ document.querySelector('#webGrayCheckbox').addEventListener('change', (event) =>
 });
 
 
+/**
+	1-189. requestAnimationFrame 사용하기 ~ 1-190. requestAnimationFrame 사용 
+	- webGL과 html캔버스에서 애니메이션 처리
+	- 요소에 3D효과 
+ */
+
+// requestAnimationFrame()은 화면에 각프레임이 표시되기전에 함수를 불러내는 명령임.
+// 함수 실행을 멈추고 싶을때는 cancelAnimationFrame()를 사용해서 멈춤 
+//tick();
+//let requestID;
+//function tick(){
+//	requestID = requestAnimationFrame(tick);
+//}
+
+// 커서를 따라다니는 요소 가져오기
+const el = document.querySelector('.followAnimation');
+
+// 마우스 좌표
+let mouseX =0;
+let mouseY =0;
+
+// 커서를 따라다리는 요소의 좌표 변수 생성
+let currentX=0; let currentY=0;
+
+// 마우스 이동시 이벤트
+document.body.addEventListener('mousemove', (event) => {
+	mouseX=event.clientX;
+	mouseY=event.clientY;
+});
+
+tick();
+function tick(){
+	requestAnimationFrame(tick); 	// 애니메이션 프레임 지정
+	
+	// 따라오는 요소 좌표에 마우스 좌표를 지연시켜 반영
+	currentX += (mouseX- currentX)*0.1;
+	currentY += (mouseY- currentY)*0.1;
+	
+	// 지연된 자표를 위치에 반영
+	el.style.transform= `translate(${currentX}px, ${currentY}px)`;
+}
