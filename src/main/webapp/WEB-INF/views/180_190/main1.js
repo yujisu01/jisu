@@ -224,4 +224,40 @@ document.querySelector('#webOpaCheckbox').addEventListener('change', (event) => 
 
 
 
+/**
+	1-187. 요소 밝기 조절하기
+	- css의 filter 속성의 brightness() 메소드를 사용함. 
+ */
 
+/* (1) CSS Transition */
+
+document.querySelector('#cssBrightCheckbox').addEventListener('change', (event) => {
+	const cssBrightE= document.querySelector('.cssBrightRect');
+	
+	if(cssBrightE.classList.contains('state-show') ===true){
+		cssBrightE.classList.remove('state-show');
+	}else{
+		cssBrightE.classList.add('state-show');
+	}
+});
+
+/* (2) WEB Animations API */ 
+document.querySelector('#webBrightCheckbox').addEventListener('change', (event) => {
+	const webBrightE = document.querySelector('.webBrightRect');
+	
+	if(event.target.checked===true){
+		webBrightE.animate({
+			filter: ['brightness(100%)', 'brightness(400%)']
+		},
+		{	// 밀리초 지정			종료시 속성			가속도종류
+			duration: 500, fill:'forwards', easing:'ease'
+		});
+	}else{
+		webBrightE.animate({
+			filter: ['brightness(400%)', 'brightness(100%)']
+		},
+		{
+			duration: 500, fill: 'forwards', easing: 'ease'
+		});
+	}
+});

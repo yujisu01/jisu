@@ -266,4 +266,44 @@ button {
 
 
 			/* 1-187 (1) */
+			
+.cssBrightRect {
+  display: block;
+  position: absolute;
+  top: 50px;
+
+  filter: brightness(40%);
+  transition: all 0.5s;
+}
+
+.cssBrightRect.state-show {
+  filter: brightness(200%);
+}
+
+.centering {
+  position: relative;
+}
+
+.cssBrightUi {
+  position: absolute;
+  bottom: 50px;
+}				
 			/* 1-187 (2) */
+			
+.webBrightRect {
+  display: block;
+  position: absolute;
+  top: 50px;
+}
+.centering {
+  position: relative;
+}
+
+.webBrightUi {
+  position: absolute;
+  bottom: 50px;
+}
+
+
+			/* 1-188 (1) */
+			/* 1-188 (2) */
