@@ -225,14 +225,14 @@ button {
   height: 200px;
   display: block;
   position: absolute;
-  background: white;
+  background: #c1b58b;
   top: 100px;
 
   transition: all 0.5s;
 }
 
 .cssOpaRect.state-show {
-  opacity: 0.5;
+  opacity: 0.1;
 }
 
 .centering {
@@ -245,3 +245,25 @@ button {
 }			
 
 			/* 1-186 (2) */
+			
+.webOpaRect {
+  width: 200px;
+  height: 200px;
+  display: block;
+  position: absolute;
+  background: #c1b58b;
+  top: 100px;
+}
+
+.centering {
+  position: relative;
+}
+
+.webOpaUi {
+  position: absolute;
+  bottom: 100px;
+}
+
+
+			/* 1-187 (1) */
+			/* 1-187 (2) */

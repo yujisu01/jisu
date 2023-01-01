@@ -181,3 +181,47 @@ document.querySelector('#webApiMoveCheckbox').addEventListener('change', (event)
 	}
 });
 
+
+
+/**
+	1-186. 요소 투명도 조절
+	- opacity 속성을 사용. 1일땐 온전히 다보이고, 0일때 완전투명 상태
+ */
+
+/* (1) css transition */ 
+
+document.querySelector('#cssOpaCheckbox').addEventListener('change', (event) => {
+	const cssOpaE = document.querySelector('.cssOpaRect');
+	
+	if(cssOpaE.classList.contains('state-show') ===true) {
+		cssOpaE.classList.remove('state-show');
+	}else{
+		cssOpaE.classList.add('state-show');
+	}
+});
+
+/* (2) web animation api */
+
+document.querySelector('#webOpaCheckbox').addEventListener('change', (event) => {
+	const webOpaE = document.querySelector('.webOpaRect');
+	
+	if(event.target.checked===true){
+		webOpaE.animate({
+			opacity: [1.0, 0.2]
+		},
+		{
+			duration:500, fill:'forwards', easing:'ease'
+		});
+	}else{
+		webOpaE.animate({
+			opacity : [0.2, 1.0]
+		},
+		{
+			duration:500, fill:'forwards', easing:'ease'
+		});
+	}
+});
+
+
+
+
