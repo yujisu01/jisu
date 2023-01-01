@@ -133,7 +133,51 @@ document.querySelector('#webAniCheckbox').addEventListener('change', (event) => 
 		);
 	}else{
 		webAniElement.animate(
-			{transform: ['scale(5), scale(1)']},{duration:500, fill:'forwards', easing: 'ease'}
+			{transform: ['scale(5)', 'scale(1)']},{duration:500, fill:'forwards', easing: 'ease'}
 		);
 	}
 });
+
+
+
+/**
+	1-185. 요소 이동하기 
+ */
+
+/* (1) CSS Transitions 사용 */
+document.querySelector('#cssMoveCheckbox').addEventListener('change', (event) => {
+	const cssMoveE = document.querySelector('.cssMoveRect');
+	
+	if(cssMoveE.classList.contains('state-show') ===true){
+		cssMoveE.classList.remove('state-show');
+	}else{
+		cssMoveE.classList.add('state-show');
+	}
+});
+
+
+/* (2) Web Animations API 사용 */
+document.querySelector('#webApiMoveCheckbox').addEventListener('change', (event) => {
+	const webApiMoveE= document.querySelector('.webApiMoveRect');
+	
+	if(event.target.checked ===true) { 	// 체크할때
+		webApiMoveE.animate({
+			transform : [
+				'translateX(0px)', 'translateX(300px)'
+			]
+		},
+		{
+			duration:400, fill:'forwards',easing:'ease'
+		});
+	}else{		// 체크해제시 
+		webApiMoveE.animate({
+			transform: [
+				'translateX(300px)','translateX(0px)'
+			]
+		},
+		{
+			duration:1000, fill:'forwards', easing:'ease'
+		});
+	}
+});
+

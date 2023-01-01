@@ -130,7 +130,7 @@ button {
   height: 50px;
   display: block;
   position: absolute;
-  background: white;
+  background: green;
   top: 150px;
 
   transition: all 0.5s;
@@ -138,6 +138,7 @@ button {
 
 .cssTranRect.state-show {
   transform: scale(6);
+   background: white;
 }
 
 .centering {
@@ -156,7 +157,7 @@ button {
   height: 50px;
   display: block;
   position: absolute;
-  background: white;
+  background: green;
   top: 150px;
 }
 
@@ -168,3 +169,79 @@ button {
   position: absolute;
   bottom: 100px;
 }
+
+
+			/* 1-185 (1) */
+			
+.cssMoveRect {
+  width: 100px;
+  height: 100px;
+  display: block;
+  position: absolute;
+  background: red;
+  top: 150px;
+
+  transition: all 1s;
+}
+
+.cssMoveRect.state-show {
+  transform: translate(300px, 0px);
+}
+
+.centering {
+  position: relative;
+}
+
+.cssMoveUi {
+  position: absolute;
+  bottom: 100px;
+}
+
+			/* 1-185(2) */
+			
+.webApiMoveRect {
+  width: 100px;
+  height: 100px;
+  display: block;
+  position: absolute;
+  background: red;
+  top: 150px;
+}
+
+.centering {
+  position: relative;
+}
+
+.webApiMoveUi {
+  position: absolute;
+  bottom: 100px;
+}
+
+
+			/* 1-186 (1) */
+			
+.cssOpaRect {
+  width: 200px;
+  height: 200px;
+  display: block;
+  position: absolute;
+  background: white;
+  top: 100px;
+
+  transition: all 0.5s;
+}
+
+.cssOpaRect.state-show {
+  opacity: 0.5;
+}
+
+.centering {
+  position: relative;
+}
+
+.cssOpaUi {
+  position: absolute;
+  bottom: 100px;
+}			
+
+			/* 1-186 (2) */
