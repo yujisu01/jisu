@@ -1,1 +1,10 @@
 @charset "UTF-8";
+			
+			/* 1-192 */ 
+
+img.loading {
+  background-color: black;
+  background-image: url("../../image/loading.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+}

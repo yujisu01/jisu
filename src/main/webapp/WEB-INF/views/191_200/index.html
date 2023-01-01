@@ -6,9 +6,32 @@
 <link rel="stylesheet" href="css/style.css" type="text/css">
 <link rel="stylesheet" href="../common/base_style.css" type="text/css">
 <!-- <script src="../191_200/main1.js" defer></script> -->
-	 <script src="../191_200/main1.js" defer></script>
+	 <script src="../191_200/main2.js" defer></script>
 </head>
 <body>
+	<!-- 1-191. 스크립트로 이미지 로딩 -->
+	<main class="centering">
+		<p>
+			<img id="loadImage1" />
+			<img id="loadImage2" />
+		</p>
+	</main>
+	
+	<!-- 1-192. 이미지 로딩후 작업하기 -->
+	<main class="centering">
+		<p>
+			<img id="onloadImage" width="390" height="426" />
+		</p>
+	</main>
+	
+	<!-- 1-193. 이미지 로딩 지연시키기 -->
+	<main class="centering">
+		<p>
+			<img data-src="../image/반란루미.jpg" width="320" height="214" />
+			<img data-src="../image/반계쿵야.jpg" width="320" height="214" />
+		</p>
+		<button class="loadBtn">L O A D I N G . . .</button>
+	</main>
 
 </body>
 </html>
