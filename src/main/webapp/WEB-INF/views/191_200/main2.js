@@ -10,6 +10,7 @@
 
 // 버튼클릭시 이미지를 로딩하는 샘플
 const srcMap= new Map();
+
 window.addEventListener('DOMContentLoaded', () => {
 	const imgs= document.querySelectorAll('img');		// 모든 img요소 참조
 	imgs.forEach((img) => {
@@ -19,6 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 const btn =document.querySelector('.loadBtn');
+
 btn.addEventListener('click', () => {
 	const imgs =document.querySelectorAll('img');		// 모든 img요소 참조
 	imgs.forEach((img) => {
@@ -26,3 +28,5 @@ btn.addEventListener('click', () => {
 		img.src=source;
 	});
 });
+
+
