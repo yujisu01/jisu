@@ -19,5 +19,6 @@ img.onload = () => {
   // 이미지 로딩 완료 후 처리 작업
   img.classList.remove('loading');
 };
-img.src='../../image/양파쿵야.jpg';
+// img.src='../../image/양파쿵야.jpg'; 	// 로딩중 이미지 뜨는거
+img.src='../image/양파쿵야.jpg';			// 바로 이미지 뜨는거
 img.classList.add('loading');
