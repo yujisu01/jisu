@@ -3,7 +3,7 @@
 			/* 1-192 */ 
 
 img.loading {
-  background-color: black;
+  background-color: rgb(255, 128, 192);
   background-image: url("../../image/loading.gif");
   background-position: center;
   background-repeat: no-repeat;
@@ -22,3 +22,12 @@ img.loading {
   height: 180px;
 }
 			
+
+			/* 1-197 */
+
+button {
+  background-color:  rgb(255, 128, 192);
+  padding: 10px;
+  color:  #fff;
+  cursor: pointer;
+}
