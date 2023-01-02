@@ -9,5 +9,16 @@ img.loading {
   background-repeat: no-repeat;
 }
 
-			/* 1-194 */
+			/* 1-195 */
+			
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.container img {
+  width: 250px;
+  height: 180px;
+}
 			
