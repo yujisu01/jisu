@@ -9,6 +9,29 @@
 	 <script src="../201_209/main1.js" defer></script>
 </head>
 <body>
+	<!-- 1-201. 영상로딩하기 -->
+	<main class="centering">
+		<p><video id="video1" src="../image/ed.mp4" controls autoplay loop preload="auto"></video>
+	</main>
 
+	<!-- 1-202. 스크립트로 영상제어 -->
+	<main class="centering">
+		<div>
+			<video id="musicVideo"
+					width="670" height="480" src="../image/pug.mp4">
+			</video>
+		</div>
+		<div>
+			<button id="btnPlay">🎧</button>
+			<button id="btnPause">⏸</button>
+		</div>
+	</main>
+	
+	<!-- 1-203. 카메라 기능사용 -->
+	<main class="centering">
+		<button id="cam" onclick="loadAndPlay()">📷 ON</button>
+		<button id="cam" onclick="stop()">📷 OFF</button>
+		<video id="my" width="640" height="480" autoplay></video>
+	</main>
 </body>
 </html>

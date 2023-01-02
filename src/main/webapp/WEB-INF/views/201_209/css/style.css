@@ -1,1 +1,42 @@
 @charset "UTF-8";
+
+
+			/* 1-201 */
+			
+#video1 {
+	margin-top:250px;
+	margin-bottom: 400px;
+}				
+			/* 1-202 */
+			
+#btnPlay {
+  background-color: rgb(128, 128, 255);
+  padding: 10px 10px 10px 10px;
+  color: #fff;
+  cursor: pointer;
+}
+#btnPause {
+  background-color: rgb(128, 128, 255);
+  padding: 10px 10px 10px 10px;
+  color: #fff;
+  cursor: pointer;
+   margin-bottom: 300px;
+}
+
+			/* 1-203 */
+			
+#cam {
+  margin-bottom: 10px;
+  background-color: white;
+  padding: 10px;
+  color:black;
+  cursor: pointer;
+}
+
+#log {
+  font-size: 48px;
+}
+
+#my {
+  filter: grayscale(100);
+}
