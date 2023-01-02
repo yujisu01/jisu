@@ -22,3 +22,11 @@ img.onload = () => {
 // img.src='../../image/양파쿵야.jpg'; 	// 로딩중 이미지 뜨는거
 img.src='../image/양파쿵야.jpg';			// 바로 이미지 뜨는거
 img.classList.add('loading');
+
+
+
+const testBtn= document.querySelector('#testBtn');
+
+testBtn.addEventListener('click', ()=>{
+	location.href='file:///C:/Users/user/eclipse-workspace/jisu/src/main/webapp/WEB-INF/views/191_200/index.html';
+});

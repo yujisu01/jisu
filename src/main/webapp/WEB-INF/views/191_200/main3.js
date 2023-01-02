@@ -97,4 +97,27 @@ document.querySelector('#muteBtn').addEventListener('click', () => {
 
 // web audio api는 audio요소에 비해 기능 많고 제약이 적음. 
 // 예를들면 사운드 파형 데이터를 가져와서 비주얼라이저 만들기 가능. 
+//loadAndPlay();
 
+let source;
+/*
+// 재생처리
+async function loadAndPlay(){
+	const context= new AudioContext();	
+	const soundFile= await fetch('../image/birth.mp3');	// 사운드 파일 로딩
+	const soundBuffer = await soundFile.arrayBuffer(); 	// arrayBuffr로 사용
+	const decodeBuffer= await context.decodeAudioData(soundBuffer); 	// 오디오데이터로 전환
+	
+	source = context.createBufferSource(); 		// 소스작성
+	source.soundBuffer= decodeBuffer; 	// 소스에 오디오 데이터 할당
+	source.connect(context.destination); 	// 스피커연결
+	source.start(0); 	// 재생시작
+}
+function soundStop(){
+	source.stop();
+} 
+*/
+
+
+
+// 모르겠어서 일단 넘어감
