@@ -40,3 +40,15 @@
 #my {
   filter: grayscale(100);
 }
+
+
+
+			/* 1-209 */
+			
+#btnSave {
+  background-color: white;
+  margin-top:39px;
+  padding: 10px;
+  color: black;
+  cursor: pointer;
+}

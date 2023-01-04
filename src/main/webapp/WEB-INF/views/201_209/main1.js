@@ -103,4 +103,77 @@ setTimeout(() => {
 
 /**
 	1-206. SVG 요소 스타일 변경하기
+	- 유저 조작에 반응하는 그래픽 넣기
  */
+
+const svgC= document.querySelector('#svgCircle');
+svgC.setAttribute('r', '100');	// 반지름지정
+svgC.setAttribute('fill', '#FFFF8D'); 		// 색상지정
+svgC.setAttribute('fill-opacity', '0.5'); 	// 색상투명도 지정
+
+
+/**
+	1-207. SVG 요소 마우스로 다루기
+	- svg요소 스타일 변경하고 싶을때
+ */
+const svgM = document.querySelector('#mouseSvgCircle');
+svgM.addEventListener('click', (event) => {
+	alert('스타벅스 이벤트에 당첨되셨습니다.');
+});
+
+
+
+/**
+	1-208. SVG요소 애니메이션 효과주기
+	-시간변화에 따른 SVG애니메이션 효과
+ */
+const svgAni=document.querySelector('#aniSvgCircle');
+let time=0;
+
+svgAnimate();
+
+function svgAnimate() {
+	time += 0.4; 	// 시간변화
+	svgAni.style.fill = `hsl(0, 100%, ${time}%)`;
+	
+	if(time < 100){
+		requestAnimationFrame(svgAnimate);	// 목표값까지 반복하기
+	}
+}
+
+
+/**
+	1-209. SVG그래픽 다운로드하기
+	- outerHTML 속성으로 문자열 가져온다. 
+ */
+
+document.querySelector('#btnSave').addEventListener('click', saveFile);
+
+function saveFile(){
+	const fileName= `mySvg.svg`;	// 파일명
+	// svg요소 가져오기
+	const fileContent = document.querySelector('#svgSave').outerHTML;
+	const dataUrl = 'data:image/svg+xml, \n' + encodeURIComponent(fileContent);	// 데이터준비
+	
+	// BOM의 문자 깨짐 방지
+	const bom = new Uint8Array([0xef, 0xbb, 0xbf]);	// Unit이 아니라 Uint임.
+	const blob = new Blob([bom, fileContent], {type: 'text/plain'});
+	
+	if(window.navigator.msSaveBlob){
+		// IE
+		window.navigator.msSaveBlob(blob, fileName);
+		console.log('ie');
+	}else if (window.URL && window.URL.createObjectURL){
+		// 파이어폭스,크롬,사파리
+		const a= document.createElement('a');
+		a.download=fileName;
+		a.href=window.URL.createObjectURL(blob); 
+		document.body.appendChild(a);
+		a.click(); 
+		document.body.removeChild(a);
+		console.log('chrome');
+	}else{ 		// 사파리
+		window.open(dataUrl, '_blank');
+		console.log('safari');
+	}
+}
