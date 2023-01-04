@@ -177,3 +177,23 @@ function saveFile(){
 		console.log('safari');
 	}
 }
+
+
+
+/**
+	1-210. 캔버스 사용하기 ~ 1-211. 캔버스 요소 색칠하기/선 그리기
+	- 비트맵기반 도형을 스크립트에서 사용
+	- canvas.getContext('2d') : 캔버스에서 명령가져오기
+	- context.fillRect(x,y,폭,높이) : 직사각형 영역 칠하기 
+ */
+
+// svg는 일러스트등에 적합하고, 캔버슨느 이미지 가공에 적합. 
+// 캔버스 요소 사용을 위해선 html에 캔버스 요소를 배치한뒤 자바스크립트로 요소 id값 참조하고 콘텍스트를 가져옴.
+// 텍스트의 fillRect()를 사용해서 직사각형 생성
+
+const canvas= document.querySelector('#myCanvas');	// 캔버스 요소참조
+const canContext= canvas.getContext('2d');		// 컨텍스트 가져오기
+//canContext.fillStyle='red';
+canContext.lineWidth=3;
+canContext.strokeStyle='blue';
+canContext.strokeRect(0,0,100,100);		// 도형생성
