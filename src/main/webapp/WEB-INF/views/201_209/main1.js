@@ -197,3 +197,49 @@ const canContext= canvas.getContext('2d');		// 컨텍스트 가져오기
 canContext.lineWidth=3;
 canContext.strokeStyle='blue';
 canContext.strokeRect(0,0,100,100);		// 도형생성
+
+
+
+
+/**
+	1-212. 캔버스에 이미지 붙여넣기
+	- context.drawImage(image, x, y) : 캔버스요소에 이미지 그리기
+ */
+const imgCan = document.querySelector('#imageCanvas');
+const imgCon= canvas.getContext('2d');
+
+// 이미지인스턴스 생성
+const img = new Image();
+img.onload = () => {
+	imgCon.drawImage(img, 0, 0);
+};
+// 이미지 로딩시작
+img.src='../image/best.gif';
+
+
+
+/**
+	1-213. 캔버스 화소정보 다루기
+	- 이미지 가공을 위한 화소정보 가져오기
+	- context.getImageData(x,y,width,height) 
+ */
+// getImageData()를 사용해서 캔버스콘텍스트의 화소정보를 가져오며, 반환값은 ImageData객체다
+
+const pxCan= document.querySelector('#pixelCanvas');
+const pxCon = pxCan.getContext('2d');
+pxCon.fillStyle='red';	// 컨텍스트 색상지정
+pxCon.fillRect(0,0,100,100);
+
+const pxData= pxCon.getImageData(0,0,100,100);
+console.log(pxData.data); 	// 화소배열 출력
+
+
+
+/**
+	1-214. 이미지의 RGBA값 확인
+	- 마우스가 가리키는 이미지 화소정보 확인
+	- 이미지에 포함된 색 정보 확인
+ */
+// getImageData()를 사용해서 마우스커서가 가리키는 위치 색정보를 구한다.
+// 캔버스요소를 mousemove 이벤트로 감시해서 마우스 커서 좌표를 layerX와 layerY로 가져온다.
+// getImageData()의 첫번째와 두번째 인수에 해당좌표 할당해서 화소배열 가져옴. 
