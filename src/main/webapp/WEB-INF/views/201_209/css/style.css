@@ -52,3 +52,34 @@
   color: black;
   cursor: pointer;
 }
+
+
+			/* 1-217 */
+			
+.header button{
+	background-color: rgba(0,0,0,0.1);
+	padding:10px;
+	color:#fff;
+	cursor:pointer;
+	display:inline-block;
+	width:200px
+}				
+.hGroup{
+	display:flex;
+	justify-content:center;
+}
+
+
+			/* 1-218 */
+			
+button {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+}
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+}				

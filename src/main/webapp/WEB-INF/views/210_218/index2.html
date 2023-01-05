@@ -2,9 +2,46 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+<title>210_218</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="css/style.css" type="text/css">
 
+<!-- <script src="../201_209/main1.js" defer></script> -->
+	 <script src="../210_218/main3.js" defer></script>
+</head>
+<body class="chapter-12">
+	<!-- 1-217. PNG/JPEG DataURL로 불러오기 -->
+	<main class="centering">
+		<div class="header">
+			<p>이미지 저장 버튼</p>
+			<button id="btnJpg">JPG</button>
+			<button id="btnPng">PNG</button>
+			<button id="btnWebp">WebP</button>
+			<button id="btnGif">GIF</button>
+		</div>
+		<div class="hGroup">
+			<div>Canvas 요소<br/>
+				<canvas id='saveCanvas' width="300" height="300"></canvas>
+			</div>
+			
+			<div>Image 요소
+				<img id='saveImage' width="300" height="300" />
+			</div>
+		</div>
+	</main>
+	
+	<!-- 1-218. 캔버스 그래픽 다운로드하기 -->
+	<main class="centering">
+		<figure>
+			<canvas id="originCanvas" width="150" height="150"></canvas>
+			<figcaption>▲ 기존 이미지</figcaption>
+		</figure>
+		<figure>
+			<canvas id="afterCanvas" width="150" height="150"></canvas>
+			<figcaption>▲ 변환 이미지</figcaption>
+		</figure>
+		
+		<button id="btnDownload">Download</button>
+	</main>
 </body>
 </html>

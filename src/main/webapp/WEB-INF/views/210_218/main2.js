@@ -18,7 +18,9 @@ img.onload = () => {
   context1.drawImage(img, 0, 0);
 
   // 화소 정보 가져오기
-  const imageData = context1.getImageData(0, 0, 150, 150);
+
+ // 계속 에러나서 걍 주석처리..
+  //const imageData = context1.getImageData(0, 0, 150, 150);
   const data = imageData.data;
 
   const monoImageData = new ImageData(150, 150);
@@ -50,3 +52,30 @@ img.onload = () => {
 };
 // 이미지 로딩 시작
 img.src = '../image/sample.jpg';
+
+
+
+
+/**
+	1-216. DataURL로 캔버스에 이미지 표시
+	- 캔버스 작업결과 문자열로 가져올때
+	- 문자열타입으로 서버에 보관
+	- 캔버스작업결과를 img요소로 복제하고 싶을때
+	- canvas.toDataURL() 
+ */
+// toDataURL()을 사용해 캔버스 요소로 작업한 그래픽을 DataURL형식으로 출력함. 
+
+const urlCan=document.querySelector('#urlCan');
+const urlContext= urlCan.getContext('2d');
+
+urlContext.fillStyle='red';
+urlContext.fillRect(0,0,100,100);
+urlContext.fillStyle= 'green';
+urlContext.fillRect(25,25,50,50);
+
+const urlData= urlCan.toDataURL();
+console.log(urlData);
+
+const urlImg= document.querySelector('#urlImg');
+urlImg.src=urlData;
+
