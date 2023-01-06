@@ -81,4 +81,25 @@ promise.then(() => {
 /**
 	1-224. Promise 성공/실패 처리하기
 	- 실패 가능성이 있는 비동기 작업 처리
+	- Promise인스턴스.catch(함수): 실패시 콜백함수호출
  */
+// promise로 실패한 작업을 처리하고 싶을때 생성자인수에 reject를 포함하는 함수를 지정한다.
+// reject는 처리의 실패를 나타내는 작업을 할당. reject가 실행되면 catch()가 호출댐
+
+// 메소드 체인(연결)해서 코드 가볍게 하기
+const flag=0;
+new Promise((resolve, reject) => {	// 생성자에 reject 지정
+	if(flag===true){
+		resolve('safari');
+	}else{
+		reject('chrome');
+	}
+})
+
+.then((value) => {
+	console.log(value);		
+})
+.catch((value) => {		// 실패시 출력
+	console.log(value);
+});
+
