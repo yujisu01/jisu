@@ -31,5 +31,41 @@ var c=
 // JSON.parse()를 사용해 json문자열을 해석하고 자바스크립트 값과 객체로 변환한다.
 // JSON.parse()로 변환한 문자열은 자바스크립트 객체로 처리되므로 마침표(.)를 사용해 참조
 
+const jsonJava = `{"dog":20, "cat":15, "name":"댕냥"}`;
+const jsonJavaData= JSON.parse(jsonJava);
+
+console.log(jsonJavaData);
+console.log(jsonJavaData.dog);
+console.log(jsonJavaData.cat);
+console.log(jsonJavaData.name);
 
 
+
+/**
+	1-230. 객체를 json 변환하기
+	- 자바스크립트 객체를 json문자열로 변환하고 싶을때
+	- JSON.stringify(obj)
+ */
+const javaJson = {a: 1000, b:'egg'};
+const javaJsonString = JSON.stringify(javaJson);
+console.log('----------------------------');
+console.log(javaJsonString);
+
+
+
+/**
+	1-231. json변환에 들여쓰기 적용
+	- 자바스크립트 객체르 json문자열로 변환
+	- 가독성을 위해 json에 들여쓰기 적용
+	- JSON.stringify(obj, null, '') 
+ */
+const javaJsonN = {"볼거1": 'Wednesday', "볼거2":'The Glory'};
+const javaJsonStr= JSON.stringify(javaJsonN, null, '');
+console.log('----------------------------');
+console.log(javaJsonStr);
+
+
+
+/**
+	
+ */
