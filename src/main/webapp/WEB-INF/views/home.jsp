@@ -13,6 +13,6 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. dfsfd </P>
-<a href="file:///C:/Users/user/eclipse-workspace/jisu/src/main/webapp/WEB-INF/views/191_200/index.html">ccddddd</a>
+<a href="../../views/191_200/main1.js">ccddddd</a>
 </body>
 </html>

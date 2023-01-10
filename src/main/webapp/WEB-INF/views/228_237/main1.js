@@ -90,7 +90,7 @@ console.log(str);
 
 
 /**
-	1-233. fetch()로 텍스트데이터 읽어오기
+	1-233. fetch()로 텍스트데이터 읽어오기 ( (CORS Policy z zzz))
  */
 // fetch()를 사용하면 외부파일 가져오기 가능. 프로그램에서는 데이터다운로드 시간예측 불가능하므로 Promise의 then()을 사용해 비동기로 처리함.
 // fetch()로 데이터를 가져온뒤 then()을 호출함.. 이게 첫번째 단계. 
@@ -106,3 +106,40 @@ fetchBtn.addEventListener('click', () => {
 	}
 	load();
 });
+
+
+/**
+	1-235. fetch()로xml읽기 (CORS Policy z zzz)
+ */
+const xmlBtn= document.querySelector('#xmlBtn');
+xmlBtn.addEventListener('click' , ()=> {
+	async function xmlLoad(){
+		const response = await fetch('new.xml');
+		const xmlTxt= await response.text();
+		const xml= new DOMParser().parseFromString(xmlTxt, 'application/xml');
+		
+		console.log(xml);
+		
+		document.querySelector('#xmlLog').textContent= xmlTxt;
+	}
+	xmlLoad();
+});
+
+
+
+/**
+	1-236. fetch()로 바이너리 데이터 읽기
+ */
+const bBtn= document.querySelector('#bBtn');
+bBtn.addEventListener('click', ()=>{
+	async function bLoad(){
+		const res= await fetch('../image/han.jpg');
+		const blob= await res.blob();
+		
+		const bImg= new Image();
+		bImg.src=URL.createObjectURL(blob);
+		document.querySelector('#bLog').appendChild(bImg);
+	}
+	bLoad();
+});
+
