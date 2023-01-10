@@ -143,3 +143,29 @@ bBtn.addEventListener('click', ()=>{
 	bLoad();
 });
 
+
+
+/**
+	1-237. fetch() 란
+ */
+
+/** 
+	웹서버에 데이터전달할때 사용함. 데이터 전달방법은 get, post가 있는데
+	get은 url에 데이터전달하는게 노출되고 post는 개인정보 보호함.
+	
+ */
+const obj={hello:'world'};
+const ppdata={
+	method:'POST',
+	headers:{
+		'Content-Type':'application/json'
+	},
+	body:JSON.stringify(obj)
+};
+
+fetch('./new',ppdata)
+.then((res) => res.text())
+.then(console.log)
+
+
+// php..pass ;....하
