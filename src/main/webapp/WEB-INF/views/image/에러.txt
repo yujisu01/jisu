@@ -1,0 +1,377 @@
+
+workbench 에러
+https://055055.tistory.com/44
+xmi 파일 지움
+
+No editor descriptor for id org.eclipse.ui.internal.emptyEditorTab
+
+다시 도돌이표
+An error has occurred. See error log for more details.
+org/eclipse/tm4e/ui/utils/ContentTypeHelper
+
+contact all update sites during install to find required software
+
+그냥 
+
+C:\Users\user\eclipse-jee-2020-12-R-win32-x86_64\eclipse\features
+
+여기서
+tm4e 관련 폴더 다 삭제하니까 
+정상적으로 됨
+
+
+
+https://download.eclipse.org/tm4e/snapshots/
+
+An error has occurred. See error log for more details. org/eclipse/tm4e/ui/utils/ContentTypeHelper
+
+
+-
+또 계속하다가
+C:\Users\user\AppData\Local\Temp
+임시파일들 221213, 221214꺼 이클립스 끄고 다삭제함
+
+
+UI가 다깨진다
+js파일은 물론이고 jsp도 안나옴
+슬슬 ㅈ됨을 감지하고
+이블로그 따라함
+https://youngdev57.tistory.com/78
+
+오류가떴다
+1. 이거랑
+Cannot complete the install because of a conflicting dependency.
+Software being installed: Git integration for Eclipse 6.4.0.202211300538-r (org.eclipse.egit.feature.group 6.4.0.202211300538-r)
+Software being installed: Git integration for Eclipse - Task focused interface 6.1.0.202203080745-r (org.eclipse.egit.mylyn.feature.group 6.1.0.202203080745-r)
+Only one of the following can be installed at once: 
+Git integration for Eclipse - UI 6.1.0.202203080745-r (org.eclipse.egit.ui 6.1.0.202203080745-r)
+Git integration for Eclipse - UI 6.4.0.202211300538-r (org.eclipse.egit.ui 6.4.0.202211300538-r)
+Cannot satisfy dependency:
+From: Git integration for Eclipse 6.4.0.202211300538-r (org.eclipse.egit.feature.group 6.4.0.202211300538-r)
+To: org.eclipse.equinox.p2.iu; org.eclipse.egit.ui [6.4.0.202211300538-r,6.4.0.202211300538-r]
+Cannot satisfy dependency:
+From: Git integration for Eclipse - Task focused interface 6.1.0.202203080745-r (org.eclipse.egit.mylyn.feature.group 6.1.0.202203080745-r)
+To: org.eclipse.equinox.p2.iu; org.eclipse.egit.mylyn.ui [6.1.0.202203080745-r,6.1.0.202203080745-r]
+Cannot satisfy dependency:
+From: EGit Mylyn UI 6.1.0.202203080745-r (org.eclipse.egit.mylyn.ui 6.1.0.202203080745-r)
+To: java.package; org.eclipse.egit.ui [6.1.0,6.2.0)
+
+
+
+2. 이거
+An error occurred while collecting items to be installed
+session context was:(profile=epp.package.jee, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).
+Problems downloading artifact: osgi.bundle,org.bouncycastle.bcprov,1.72.0.v20221013-1810.
+Error reading signed content:C:\Users\user\AppData\Local\Temp\signatureFile5191223744926338869.jar
+An error occurred while processing the signatures for the file: C:\Users\user\AppData\Local\Temp\signatureFile5191223744926338869.jar
+
+난리
+
+
+
+
+
+
+
+
+대체 이게뭔데 
+org/eclipse/tm4e/ui/utils/ContentTypeHelper
+
+존나짜증난다고
+다 해도 안돼 
+는데
+어쩌라고
+나보고 
+
+There is no active editor that provides an outline
+
+나랑똑같은상황인 블로그 발견 ..버전문제인가 ;
+
+
+https://heaven0713.tistory.com/27
+
+1. node js 깐거 uninstall 함
+2. Tern feature, 
+Tern JSDT feature, 
+Tern server node.js feature 
+Uninstall
+
+
+(2차 난리)
+An error occurred while collecting items to be installed
+session context was:(profile=epp.package.jee, phase=org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).
+Problems downloading artifact: osgi.bundle,org.bouncycastle.bcprov,1.72.0.v20221013-1810.
+Error reading signed content:C:\Users\user\AppData\Local\Temp\signatureFile4417447259084317889.jar
+An error occurred while processing the signatures for the file: C:\Users\user\AppData\Local\Temp\signatureFile4417447259084317889.jar
+
+이사태를 보고....
+
+첫번째
+org.eclipse.equinox.internal.p2.engine.phases.Collect, operand=, action=).
+이거는 일단 냅뒀다..
+두번쨰
+osgi.bundle,org.bouncycastle.bcprov,1.72.0.v20221013-1810.
+얘는
+C:\Users\user\eclipse-jee-2020-12-R-win32-x86_64\eclipse\plugins
+이 폴더에서 보니 ㅝㄴ가 중복으로 계속 있길래...
+일단 20221013-1810  버전인게 3개가 있었는데........이걸 삭제해야되나
+이 전걸 삭제해야되나........
+
+일단 문제가 되는게 20221013-1810 이므로 삭제함
+(1) org.bouncycastle.bcpg_1.72.0.v20221013-1810
+(2) org.bouncycastle.bcpkix_1.72.0.v20221013-1810
+(3) org.bouncycastle.bcutil_1.72.0.v20221013-1810
+뭔데 이게 대체 
+
+
+그리고
+C:\Users\user\AppData\Local\Temp
+이폴더에 있는 저 signatureFile4417447259084317889.jar 이런 이름으로 오늘자 생성된 자르파일들 다 삭제해버림
+
+
+이래도안되려나
+
+
+
+
+
+이후
+
+https://codingman18.tistory.com/74
+
+이글을보고
+엉킨걸 알었다
+
+
+근데 나는 재설치말고...풀고싶다
+방법없나요 여러분
+
+---------
+
+
+그냥 다 삭제했따
+
+-----------
+
+이클립스 마켓에서 spring 설치했다
+jre(1.8.0)랑 톰캣(9.0)은 있으니까 냅도
+
+목표는 home.jsp 까지 무사히 보는거니까
+
+https://velog.io/@gillog/%EC%97%90%EB%9F%AC%ED%95%B4%EA%B2%B0-web.xml%EC%97%90%EC%84%9C-cvc-id.3-A-field-of-identity-constraint-web-app-filter-name-uniqueness-matched-element-web-app-but-this-element-does-not-have-a-simple-type
+
+이거 참고해서 여기까지 
+
+
+URIEncoding="UTF-8"
+
+expected in regular expression
+
+
+---------------------------------------------------
+여기부터 에러일지 시작
+
+
+
+C:\Users\user\eclipse-workspace\jisu\src\main\webapp\WEB-INF\views
+
+index.html ㄱㄱ
+
+
+22 12 15 
+
+experimental support for decorators is a feature that is subject to change in a future release
+
+
+Uncaught TypeError: Cannot set properties of null (setting 'innerHTML')
+- pass
+
+
+
+22 12 16
+
+(1)
+html, js, css파일 아무리 수정해도 js파일로 만든 내 직사각형이 안나왔다
+html파일에서 <div class="rectangle></div> 이사이에 텍스트를 넣었더니 일단 1차해결.
+근데 책처럼 크고아름다운 직사각형이 아니고 너무 옹졸하게 나오길래 구글링ㄱ
+->css파일에서 padding값을 지정해주라고 한다. 
+padding: clac(20%-70px) 하고 완전 해결
+
+(2)
+'targetX' is declared but its value is never read. 
+
+...
+문제: targetX를 정의하지 않았다고 한다
+해결: 문제가 멀까 생각해보다가결국 원작자 깃허브 소스를 복붙하고 내꺼랑 비교해봄
+character.style.left=`${targetX}px`;
+여기서 나는 `` 이거를 '' 이거로 썼다. 그래서 자꾸 정의가 안됐음
+진짜 사소한거 하나로 몇시간동안 끙끙 앓음; 바로 수정함
+
+(3) 
+Uncaught TypeError: prefectureList.forEach is not a function
+    at HTMLInputElement.<anonymous>
+
+...
+문제: 자바스크립트 상에서 forEach구문 돌렸지만 이 메시지가 뜸
+원인? 배열이 아니기 때문이라고 한다..
+해결: 자바스크립트 파일을 천천히 뜯어봄
+내가 배열이라고 돌린 
+prefecture-list 이거를
+document.querySelector 로 돌렸으니 forEach문이 안돌아갔다
+documnet.querySelectorAll 로 수정해주니 정상적으로 돌아갔다
+
+https://enchiridion.tistory.com/64 여길보고 참고했다.
+
+
+(4)
+
+main2.js:63 Uncaught ReferenceError: parameters is not defined
+    at main2.js:63:1
+
+...
+문제: parameters.forEach((parameter) => { 이걸 못가져옴
+해결: 잦은오타, 
+그리고
+document.querySelector('.name').innerHTML = hashes['name']; 인데 여기에 .name 이라고 써버림. 바로 수정함
+
+ 22 12 21
+
+(1)
+Uncaught SyntaxError: Invalid shorthand property initializer
+
+':' 이게아닌 '='이거로 돌려서 에러
+
+
+
+22 12 23
+(1)
+main1.js:129 Uncaught (in promise) DOMException: play() failed because the user didn't interact with the document first. https://goo.gl/xX8pDD
+
+
+
+22 12 28 
+(1) 
+main1.js:24 Uncaught TypeError: Failed to execute 'addEventListener' on 'EventTarget': 2 arguments required, but only 1 present.
+
+-> addListener 사용하니까 해결됨.
+근데 addEventListener과 addListener의 차이는 뭘까?
+찾아보니, addListener는 표준이 아닌 node.js에서만 사용하는 함수라고 한다. 흠....
+https://www.phpschool.com/gnuboard4/bbs/board.php?bo_table=qna_html&wr_id=224869&page=995
+
+
+(2) 자바스크립트 도중 스크롤이 계쏙 안보였다.짜증나는 css
+
+body에 이거 주석처리 해주니까
+ /* overflow: hidden; */ 
+스크롤 보임.
+
+
+
+
+
+22 12 29
+(1)
+Uncaught DOMException: Failed to execute 'insertBefore' on 'Node': The node before which the new node is to be inserted is not a child of this node.
+    at file:///C:/Users/user/eclipse-workspace/jisu/src/main/webapp/WEB-INF/views/141_150/main1.js:51:12
+
+
+이유:
+setTimeout(() => {
+	container1.insertBefore(topBox1, container1.firstElementChild);
+},3000);
+
+에서 container1인데 container 이라고 적음 (오타 ㅋ)
+
+
+
+23 01 01
+(1)
+main1.js:209 Uncaught TypeError: Failed to execute 'animate' on 'Element': Failed to read the 'fill' property from 'EffectTiming': The provided value 'forwadrs' is not a valid enum value of type FillMode.
+    at HTMLInputElement.<anonymous> 
+
+오타
+
+(2)
+Uncaught TypeError: Assignment to constant variable.
+    at main1.js:16:6
+
+
+
+23 01 02
+
+(1), (2) 둘다 같은데서 터짐 
+
+(1) 
+Access to fetch at 'file:///C:/Users/user/eclipse-workspace/jisu/src/main/webapp/WEB-INF/views/image/5pm.mp3' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data, isolated-app, chrome-extension, chrome, https, chrome-untrusted.
+-보안관련 문제 발생
+- 같은출처에서 불러온 리소스가 다른곳에서 불러온 리소스와 상호작용하는것을 막는 브라우저의 보안방침에 따라서 문제 발생 (SOP = Same Origin Policy)
+- local의 리소스는 출처가 null이기 때문에 발생..? 출처가 null 리소스의 경우에는 상호작용이고 나발이고 불러오는순간 sop에 걸린다고 한다
+
+
+
+(2)
+main3.js:106 The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page.
+
+(3) 
+Uncaught SyntaxError: await is only valid in async functions and the top level bodies of modules 
+
+- await은 항상 function쓸때 async 랑 써야 되나보다 (await은 async함수안에서만 동작.
+await은 promise가 처리될때까지 기다림)
+
+fetch는 비동기 쓸때 사용
+
+
+
+(4)
+async function 사용하니까 
+semi colon expected? 그거 에러뜸
+
+
+C:\Users\user\eclipse-workspace\.metadata\.plugins\org.eclipse.core.resources\.projects\jisu
+ 
+에서 .markers 그거 삭제해주니까 1차해결
+근데 다시 뜨긴뜸;
+
+일단 에러안뜨게 해야되니까 async 함수 주석처리하고 pass
+
+영찝찝해서
+그냥
+properties- include path 에서 source탭에서 
+Excluded->edit-> 현재 에러뜨는 js파일 절대경로로 아예 추가해줌
+
+
+
+
+23 01 04
+
+(1)
+main1.js:261 Uncaught DOMException: Failed to execute 'getImageData' on 'CanvasRenderingContext2D': The canvas has been tainted by cross-origin data.
+    at HTMLCanvasElement.<anonymous> (file:///C:/Users/user/eclipse-workspace/jisu/src/main/webapp/WEB-INF/views/201_209/main1.js:261:24)
+
+
+
+23 01 05
+
+(1)
+CORS 관련 에러 ..ㅡㅡ getImageData()가 안된다. 똑같이 toBlob() 이것도 안됨
+
+해결방법 구글링 해봄
+
+<script src="https://example.com/example-framework.js" crossorigin="anonymous"></script>
+이거 넣어도 안되고
+
+image자체에 Anonymous 줘도 안되길래..
+일단 포기함
+
+
+
+23 01 10
+
+(1)
+CORS관련 에러.
+로컬시스템에서 로컬파일 리소스 요청할때는 origin(출처)이 null로 넘어가기 떄문에 요러한 에러가 발생하는거다..... 
+
+from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data, isolated-app, chrome-extension, chrome, https, chrome-untrusted.
+
+이 오류.
+그럼 어쩌라는거지

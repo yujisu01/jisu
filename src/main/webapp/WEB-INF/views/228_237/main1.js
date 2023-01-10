@@ -67,5 +67,42 @@ console.log(javaJsonStr);
 
 
 /**
-	
+	1-232. json 변환 기능 커스터마이징
+	- 일부데이터만 json변환 작업 하고싶을때
+	- JSON.stringify(obj, replacer, space) 
  */
+// JSON.stringify()의 두번째인수는 replacer 함수를 호출하며, 이함수는 JSON데이터 변환룰 설정이 가능함. 
+// 예를들어, 숫자인 경우 작업을 무효화하고 문자열인 경우에만 변환작업을 실행하도록 지정 가능
+
+const replacer = (key, value) => {
+	// 숫자형식은 처리제외
+	if(typeof value==='number'){
+		return undefined;
+	}
+	return value;
+};
+
+const obj={
+	pref:'seoul', orange:100, flag:true, apple:100
+};
+const str= JSON.stringify(obj, replacer,' ');
+console.log(str);
+
+
+/**
+	1-233. fetch()로 텍스트데이터 읽어오기
+ */
+// fetch()를 사용하면 외부파일 가져오기 가능. 프로그램에서는 데이터다운로드 시간예측 불가능하므로 Promise의 then()을 사용해 비동기로 처리함.
+// fetch()로 데이터를 가져온뒤 then()을 호출함.. 이게 첫번째 단계. 
+
+const fetchBtn= document.querySelector('button');
+
+fetchBtn.addEventListener('click', () => {
+	async function load(){
+		const data = await fetch('../mala.txt');	//(1)
+		const text = await data.text();			//(2)
+		console.log(text);						//(3)
+		document.querySelector('#log').innerHTML= text;
+	}
+	load();
+});
