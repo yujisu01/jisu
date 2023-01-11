@@ -15,9 +15,9 @@ xbtn.addEventListener('click', ()=>{
 	const req=new XMLHttpRequest();
 	req.addEventListener('load', (event) => {
 		const text= event.target.responseText;
-		document.querySelector('#xlog').innerHTML= text;
+		document.querySelector('#Xlog').innerHTML= text;
 	});
-	req.open('GET', '../image/에러.txt');
+	req.open('GET', '../image/mala.txt');
 	req.send();
 });
 
@@ -96,3 +96,48 @@ aBtn.addEventListener('click', () => {
 			aReq.abort();
 		}
 });
+
+
+
+/**
+	1-241. 백그라운드에서 스크립트 작업하기
+	- 부하가 큰처리를 실행하고 싶을때
+	
+ */
+/**
+	자바스크립트는 메인스레드로도 동작하지만, 부하가 큰작업을 하려면 처리작업중엔 조작이 불가능함.
+	자바스크립트 처리가 ui를 담당하는 메인스레드를 멈추게 하기 떄문임...
+	웹워커를 사용하면 이문제 해결가능. 
+	웹워커는 메인스크립트와 스레드가 다르므로 DOM조작 불가하며, 페이지가 열려있을떄만 실행댐
+	웹워커와 메인스레드는 postMessage()를 사용해 메시지 전송하고, onmessage이벤트 핸들러로
+	데이터를 반환하며 해당 데이터는 onmessage 이벤트 data속성에 보관댐
+ */
+// 참조 가져오기
+const numA = document.querySelector('#num1');
+const numB = document.querySelector('#num2');
+const result = document.querySelector('.result');
+const calbtn = document.querySelector('#calBtn');
+
+// worker 생성
+const worker = new Worker('worker.js');
+
+// 버튼 클릭 시
+calbtn.addEventListener('click', () => {
+  worker.postMessage([Number(numA.value), Number(numB.value)]);
+  console.log('[메인스크립트]-> worker로 데이터 전송');
+});
+
+// worker 데이터를 가져올 때
+worker.onmessage = function(e) {
+  // 결과를 화면에 표시
+  result.textContent = e.data;
+  console.log('[메인스크립트] worker에서 메시지 냠.냠');
+};
+
+
+
+/**
+CORS문제 드디어 해결.;;ㅡㅡ
+구글링해서 크롬 바로가기 속성에서 disable~ 경로를 추가해줬다.
+(-–allow-file-access-from-files 이거 안됐었음)
+ */

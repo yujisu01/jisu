@@ -22,3 +22,35 @@
 #pLog {
   height: 350px;
 }
+
+
+			/* 1-241 */
+			
+.wrap {
+  width: 80%;
+  margin-bottom: 40px;
+  text-align: center;
+  zoom: 2;
+}
+
+.result {
+  border: 1px solid white;
+  padding: 0.5em;
+}
+
+#num1 {
+  display: inline-block;
+  width: 3em;
+}
+
+#num2 {
+  display: inline-block;
+  width: 3em;
+}
+
+#calBtn {
+  background-color: green;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+}
