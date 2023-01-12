@@ -84,9 +84,9 @@ const cooBtnSave = document.querySelector('.cooBtnSave');
 // 저장하기 클릭시
 cooBtnSave.addEventListener('click', () => {
 //	alert('?');
-	 document.cookie = 'id=1';
-  document.cookie = 'age=30';
-  document.cookie = `name=${encodeURIComponent('山田')}`;
+	document.cookie = 'id=1'; 
+	document.cookie = 'age=35';
+	document.cookie = `name=${encodeURIComponent('마계왕')}`;
 //	document.cookie = 'name=마계왕';
 });
 
@@ -94,3 +94,46 @@ cooBtnSave.addEventListener('click', () => {
 cooBtnRead.addEventListener('click', () => {
 	alert(document.cookie);
 });
+
+
+// 나는 일단 로컬파일에서 확인하는거라 쿠키 확인은,pass
+
+
+/**
+	1-247. 쿠키데이터 읽어오기
+	- 쿠키값 참조하고싶을때
+ */
+const cooBtnSave2 = document.querySelector('.cooBtnSave2');
+const cooBtnRead2 = document.querySelector('.cooBtnRead2');
+
+cooBtnSave2.addEventListener('click', () => {
+	document.cookie = 'id=2';
+	document.cookie = 'age=98';
+	document.cookie = `name=${encodeURIComponent('감자')}`;
+});
+
+// 불러오기 
+cooBtnRead2.addEventListener('click', () => {
+	const obj = convertCookieObject(document.cookie);
+	console.log(obj); 	//콘솔출력
+	
+	document.querySelector('#cooLog').innerHTML= JSON.stringify(obj,null,' ');
+	});
+	
+/* 쿠키를 객체로 변환
+	@param cookies 쿠키 문자열
+	@return 연관배열
+*/
+
+// obj불러오기하는 함수
+function convertCookieObject(cookies) {
+	const cookieItems= cookies.split(';');
+	const obj = {};
+	cookieItems.forEach((item) => {
+		var elem =item.split('=');		// = 로 분리
+		const key = elem[0].trim();		// 키 가져오기
+		const val = decodeURIComponent(elem[1]);	// 값가져오기
+		obj[key] =val;
+	});
+	return obj;
+}
