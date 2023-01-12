@@ -141,3 +141,26 @@ CORS문제 드디어 해결.;;ㅡㅡ
 구글링해서 크롬 바로가기 속성에서 disable~ 경로를 추가해줬다.
 (-–allow-file-access-from-files 이거 안됐었음)
  */
+
+
+
+/**
+	1-242. 백그라운드에서 작업실행하기
+	- 브라우저의 백그라운드에서 네트워크를 감시하고 싶을때
+	-navigator.serviceWorker.register() : serviceWorker등록 
+ */
+// 서비스워커는 열려있는 웹페이지의 백그라운드에서 항상 작동하는 스크립트임.
+// 웹워커는 페이지가 열려있을떄만 실행된다. 근데 서비스워커는 브라우저를 닫아도 실행할수 있음 (푸시알림, 캐시기능)
+
+if('serviceWorker' in navigator) {
+	navigator.serviceWorker
+		.register('serviceworker.js')
+		.then((registration) => {
+		console.log('serviceWorker 등록성공');
+	})
+	.catch((error) => {
+		console.log('serviceWorker 등록실패: ', error);
+	});
+}else{
+	console.log('serviceWorker 미대응');
+}
