@@ -64,3 +64,33 @@ cBtnClear.addEventListener('click', () => {
 cBtnAllClear.addEventListener('click', () => {
 	localStorage.clear(); 				// clae() 사용해서 전체삭제
 });
+
+
+
+/**
+	1-246. 쿠키로 로컬데이터 사용하기
+	- 쿠키에 데이터를 저자하고 싶을때
+	- document.cookie : 쿠키참조
+ */
+/**
+	쿠키는 웹데이터 저장이나 세션관리에 사용. localStorage는 다양한 데이터 저장하지만
+	쿠키는 1차원의 문자열만 저장가능. 쿠키값은 클라이언트 쪽에서도 사용하지만 서버도 불러오기와 값변경등
+	데이터를 공유할수 있다. 속성은 1차원데이터만 저장가능하므로 복잡한 데이터 저장은 주의해야댐
+	쿠키값을 불러오려면 디코딩이 필요함 (한글은 '%81%A0'이렇게 인코딩)
+ */
+const cooBtnRead = document.querySelector('.cooBtnRead');
+const cooBtnSave = document.querySelector('.cooBtnSave');
+
+// 저장하기 클릭시
+cooBtnSave.addEventListener('click', () => {
+//	alert('?');
+	 document.cookie = 'id=1';
+  document.cookie = 'age=30';
+  document.cookie = `name=${encodeURIComponent('山田')}`;
+//	document.cookie = 'name=마계왕';
+});
+
+// 불러오기
+cooBtnRead.addEventListener('click', () => {
+	alert(document.cookie);
+});
