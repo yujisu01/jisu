@@ -19,3 +19,44 @@ function deviceorientationHandler(event){
 	console.log(gamma);
 	console.log(alpha);
 }
+
+
+
+// 나침반 (잘몰겠음)
+window.addEventListener('deviceorientation', getCompassHeading);
+
+function getCompassHeading(alpha,beta,gamma){
+	const degto= Math.PI / 180;
+	
+	const _x = beta ? beta * degto : 0;
+	const _y = gamma ? gamma * degto : 0;
+	const _z = alpha ? alpha * degto : 0;
+	
+	const cY = Math.cos(_y);
+	const cZ = Math.cos(_z);
+	const sX = Math.sin(_x);
+	const sY = Math.sin(_y);
+	const sZ = Math.sin(_z);
+	
+	const Vx = -cZ * sY - sZ * sX * cY;
+	const Vy = -sZ * sY + cZ * sX * cY;
+	
+	let compassHeading = Math.atan(Vx/Vy);
+	
+	if(Vy<0){
+		compassHeading += Math.PI;
+	}
+	return compassHeading * (180 / Math.PI);
+}
+
+
+//  가속도센서(관성)
+// 스마트폰이 떨어져서 물체제 부딪히는것을 인식함. 액세스는 DeviceMotion이벤트 사용
+
+window.addEventListener('devicemotion', devicemotionHandler);
+
+function devicemotionHandler(event){
+	const x=event.acceleration.x;
+	const y=event.acceleration.y;
+	const z=event.acceleration.z;
+}
