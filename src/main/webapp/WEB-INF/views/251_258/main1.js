@@ -106,3 +106,48 @@ console.log(`상수 a의 값은 ${aa}입니다.`);
 	- 에러가 발생해도 실행을 중단하고 싶지 않을때
 	- 에러발생시 특정처리를 실행하고 싶을때
  */
+function generateError() {
+	try{
+		if(Math.random() > 0.5){	// 50%확률로 에러발생, else문으로 에러없음 처리
+			throw new Error();
+		}else{
+			console.log('-------------------');
+			console.log('🔵에러없음🔵');
+		}
+	// catch문으로 에러발생시 처리
+	}catch(error){
+		console.log('-------------------');
+		console.log('❗에러발생❗');		
+	// 에러발생 여부 상관없이 finally문 실행
+	}finally{
+		console.log('에러처리가 완료되었습니다.');
+	}
+}
+//3초마다 generateError()실행
+setInterval(generateError, 3000);
+
+
+
+/**
+	1-258. 에러종류 파악하기
+	- RangeError : 값이 허용범위내에 없음
+	- ReferenceError : 선언되지 않은 변수호출
+	- SyntaxError : 언어구문 부정확
+	- TypeError : 데이터 타입 부정확
+	- URIError : URI부정확
+ */
+
+// (1) Uncaught SyntaxError: Unexpected token 'null' 에러발생
+try{
+	//let obj  null;
+}catch(error){
+	console.log(error);
+}
+
+// (2) TypeError: Cannot read property 'myMethod' of null at ~
+try{
+	const o = {a:null};
+	o.a.myMethod();
+}catch(error){
+	console.log(error);
+}
