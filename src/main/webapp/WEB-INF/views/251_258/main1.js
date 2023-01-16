@@ -44,6 +44,7 @@ console.log(`상수 a의 값은 ${a}입니다.`);
 // a에 값을 다시 대입하면 에러발생
 //a=20;
 console.warn('다음 작업을 실행합니다.');
+console.error('error');
 
 
 
