@@ -11,4 +11,36 @@
 	}
 }
 
+{
+	{
+	const aA= 200;
+	}
+	//console.log(aA);
+}
 
+const b = 980;	 // 전역
+{
+	console.log(b);
+}
+
+
+function fu(){
+	const val= 'value1';
+	console.log(val);
+	
+	function cFu() {
+		console.log(val);
+	}
+	cFu();
+}
+fu();
+
+//스코프를 벗어나므로 에러 발생
+//console.log(val);
+
+console.log('-----------------');
+
+if(true){
+	const tVal = 'liar';
+	console.log(tVal);
+}
