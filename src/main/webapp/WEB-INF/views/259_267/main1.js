@@ -44,3 +44,36 @@ if(true){
 	const tVal = 'liar';
 	console.log(tVal);
 }
+
+
+
+
+/**
+	1-260. 클래스 정의하기
+	- 특정기능을 클래스로 만듬
+	- 자바스크립트에서객체지향 프로그래밍 구현하고 싶을때
+ */
+console.log('-----------------');
+class myClass{
+	constructor() {
+		console.log('클래스 초기화');
+	}
+}
+
+
+class my{
+	constructor(value1, value2){
+		console.log(`${value1}`);
+		console.log(`${value2}`);
+	}
+}
+new my('spam','cham');
+
+class finish{
+	constructor(){
+		this.myfield='mooooooong';
+	}
+	myMethod(){
+		console.log(this.myfield);
+	}
+}
