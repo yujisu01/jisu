@@ -95,5 +95,5 @@ class me{
 	}
 }
 const myInstance = new me();
-console.log(myInstance.classFied);
+console.log(myInstance.classField);
 myInstance.classMethod();
