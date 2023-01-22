@@ -77,3 +77,23 @@ class finish{
 		console.log(this.myfield);
 	}
 }
+
+
+
+/**
+	1-261. 클래스사용하기 (인스턴스화)
+	- 클래스를 인스턴스화
+	- 생성한 클래스를 사용하고자 할때
+	- NEW 클래스명()
+ */
+class me{
+	constructor(){
+		this.classField= 12;
+	}
+	classMethod(){
+		console.log('261.메소드 실행');
+	}
+}
+const myInstance = new me();
+console.log(myInstance.classFied);
+myInstance.classMethod();
