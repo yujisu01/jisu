@@ -97,3 +97,30 @@ class me{
 const myInstance = new me();
 console.log(myInstance.classField);
 myInstance.classMethod();
+
+
+
+/**
+	클래스에서 변수사용하기
+	- 클래스에 변수사용
+	- api통신 결과 클래스를 생성
+ */
+class testClass {
+	constructor() {
+		this.testField1 = 1000;
+		this.testField2 = 3500;
+	}
+}
+const testInstance = new testClass();
+console.log(testInstance.testField1);
+console.log(testInstance.testField2);
+
+class test2Class{
+	constructor(snoopy1,snoopy2){
+		this.snoopy1 = snoopy1;
+		this.snoopy2 = snoopy2;
+	}
+}
+const test2Instance = new test2Class('ny','ko');
+console.log(test2Instance.snoopy1);
+console.log(test2Instance.snoopy2);
