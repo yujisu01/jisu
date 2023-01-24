@@ -124,3 +124,35 @@ class test2Class{
 const test2Instance = new test2Class('ny','ko');
 console.log(test2Instance.snoopy1);
 console.log(test2Instance.snoopy2);
+
+
+/* API 통신결과를 보관하는 클래스 */
+class ApiResultData {
+	constructor(){
+		this.result;
+		this.errorMessage;
+		this.userName;
+		this.age;
+	}
+}
+/* response 데이터 변환(ApiResultData로 변환)을 위한 함수 */
+function parseData(response) {
+	const apiResultData = new ApiResultData();
+	
+	apiResultData.result= response.result;
+	apiResultData.errorMessage = response.error_message;
+	apiResultData.userName = response.user_name;
+	apiResultData.age = response.age;
+	
+	console.log(`${apiResultData.userName} / ${apiResultData.age}세`);
+}
+
+// API response데이터
+const apiResponse = {
+	result:true,
+	user_name:'스누피',
+	age: 11,
+	error_message: 'error'
+};
+
+parseData(apiResponse);
