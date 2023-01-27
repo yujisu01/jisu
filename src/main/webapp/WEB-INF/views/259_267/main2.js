@@ -24,3 +24,24 @@ class nu{
 }
 const newInstance = new nu();
 console.log(newInstance.mymethod());
+
+
+
+/**
+	1-264. 인스턴스 생성없이 정적메소드 사용
+	-클래스인스턴스화 없이 메소드 호출
+ */
+class sClass{
+	static smethod(){
+		console.log('static');
+	}
+}
+sClass.smethod();
+
+class StringUtil{
+	static createFullName(firstName,familyName){
+		return `${familyName} ${firstName}`;
+	}
+}
+const myFullName= StringUtil.createFullName('brown','charlie');
+console.log(myFullName);
