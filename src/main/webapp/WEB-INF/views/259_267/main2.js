@@ -45,3 +45,23 @@ class StringUtil{
 }
 const myFullName= StringUtil.createFullName('brown','charlie');
 console.log(myFullName);
+
+
+/**
+	1-265. 클래스 계승
+ */
+class myParent{
+	parentMethod(){console.log('pa');}
+	
+}
+class myChild extends myParent{
+	constructor(){
+		super();
+	}
+	childMethod(){
+		console.log('mychild');
+	}
+	}
+	const MyChild=new myChild();
+	MyChild.parentMethod();
+	MyChild.childMethod();
