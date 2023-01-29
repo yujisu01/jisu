@@ -65,3 +65,23 @@ class myChild extends myParent{
 	const MyChild=new myChild();
 	MyChild.parentMethod();
 	MyChild.childMethod();
+	
+	
+	
+/**
+	1-266. getter/setter
+ */
+class getset{
+	set customField(value){
+		this._customfield=value;
+	}
+	get customField(){
+		return this._customfield;
+	}
+	constructor(value){
+		this._customfield=value;
+	}
+}
+const getsetInstance =new getset();
+getsetInstance.customField = 9000100;
+console.log(getsetInstance.customField);
