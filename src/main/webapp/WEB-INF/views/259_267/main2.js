@@ -85,3 +85,22 @@ class getset{
 const getsetInstance =new getset();
 getsetInstance.customField = 9000100;
 console.log(getsetInstance.customField);
+
+
+
+/**
+	1-267. this 
+ */
+class LikeCounter{
+	constructor(){
+		this.clickCount =0;
+		const button = document.querySelector('#button');
+		const clickCountText = document.querySelector('#clickCountText');
+		
+		button.addEventListener('click', () => {
+			this.clickCount +=1;
+			clickCountText.textContent= this.clickCount;
+		});
+	}
+}
+new LikeCounter();
